@@ -1,119 +1,446 @@
+
 <!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ocean Blue Flower Garden 💙</title>
 
-<html lang="id"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Ocean Blue Bouquet 💙</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-<style> * { margin: 0; padding: 0; box-sizing: border-box; } body { min-height: 100vh; overflow-x: hidden; font-family: Georgia, serif; color: white; text-align: center; background: linear-gradient( -45deg, #010b20, #063968, #087eae, #03152e ); background-size: 400% 400%; animation: ocean 12s ease infinite; } @keyframes ocean { 0% {background-position: 0% 50%} 50% {background-position: 100% 50%} 100% {background-position: 0% 50%} } .light { position: fixed; width: 250px; height: 250px; background: #48caff; filter: blur(120px); opacity: .4; border-radius: 50%; animation: moveLight 9s infinite alternate; pointer-events: none; } .light.one { top: 10%; left: -100px; } .light.two { bottom: 5%; right: -100px; background: #147dff; } @keyframes moveLight { to {transform: translate(150px,100px)} } .particle { position: fixed; bottom: -20px; color: #d1f4ff; text-shadow: 0 0 12px white; animation: floatUp linear infinite; pointer-events: none; } @keyframes floatUp { to { transform: translateY(-110vh) rotate(360deg); opacity: 0; } } header { padding: 55px 15px 20px; position: relative; z-index: 2; } h1 { color: #c4efff; font-size: clamp(30px, 7vw, 45px); text-shadow: 0 0 20px #48caff; } .subtitle { margin-top: 15px; letter-spacing: 4px; font-size: 11px; color: #b9eaff; } .container { position: relative; z-index: 2; padding: 20px; } button { padding: 12px 20px; margin: 8px 4px; border: 1px solid #a5eaff; border-radius: 30px; color: white; background: linear-gradient(90deg,#087dbb,#55ceff); box-shadow: 0 0 15px #35baff; cursor: pointer; transition: .3s; } button:hover { transform: scale(1.07); box-shadow: 0 0 25px white; } .music { position: fixed; top: 15px; right: 15px; z-index: 20; } /* BUKET */ .bouquet-container { display: flex; justify-content: center; margin: 40px auto; } .bouquet { position: relative; width: 340px; height: 450px; animation: sway 4s ease-in-out infinite; transform-origin: bottom center; } @keyframes sway { 0%,100% {transform: rotate(-2deg)} 50% {transform: rotate(2deg)} } /* BATANG UTAMA */ .main-stem { position: absolute; width: 9px; height: 290px; background: linear-gradient( #b8edff, #1684b8, #032b54 ); bottom: 95px; left: 50%; transform: translateX(-50%); border-radius: 20px; box-shadow: 0 0 15px #42caff; } /* CABANG */ .branch { position: absolute; height: 6px; background: linear-gradient( 90deg, #032b54, #168fbd, #a3eaff ); border-radius: 20px; transform-origin: left center; box-shadow: 0 0 12px #39bfff; } .branch1 { width: 130px; left: 50%; top: 175px; transform: rotate(-145deg); } .branch2 { width: 130px; left: 50%; top: 175px; transform: rotate(-35deg); } .branch3 { width: 115px; left: 50%; top: 225px; transform: rotate(155deg); } .branch4 { width: 115px; left: 50%; top: 225px; transform: rotate(25deg); } .branch5 { width: 95px; left: 50%; top: 130px; transform: rotate(-115deg); } .branch6 { width: 95px; left: 50%; top: 130px; transform: rotate(-65deg); } /* BUNGA */ .flower { position: absolute; width: 75px; height: 75px; object-fit: cover; border-radius: 50%; border: 3px solid #a8eaff; box-shadow: 0 0 15px #36c5ff, 0 0 30px #087dbb; cursor: pointer; z-index: 5; animation: bloom 2s ease-in-out infinite alternate; transition: .4s; } .flower:hover { transform: scale(1.2); box-shadow: 0 0 40px white; } @keyframes bloom { from {filter: brightness(.85)} to {filter: brightness(1.25)} } .f1 {top: 40px; left: 10px;} .f2 {top: 75px; right: 5px;} .f3 {top: 145px; left: 0;} .f4 {top: 170px; right: 0;} .f5 {top: 0; left: 130px;} .f6 {top: 220px; left: 130px;} /* DAUN BIRU */ .leaf { position: absolute; width: 45px; height: 22px; background: linear-gradient(90deg,#034e78,#5ecbfa); border-radius: 100% 0 100% 0; box-shadow: 0 0 12px #168fc9; } .leaf1 { top: 250px; left: 85px; transform: rotate(30deg); } .leaf2 { top: 270px; right: 75px; transform: rotate(150deg); } .leaf3 { top: 310px; left: 120px; transform: rotate(20deg); } /* PEMBUNGKUS */ .bouquet-wrapper { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 205px; height: 150px; background: linear-gradient( 135deg, #a4eaff, #0875b5, #031e50 ); clip-path: polygon(5% 0,95% 0,65% 100%,35% 100%); filter: drop-shadow(0 0 15px #38bfff); z-index: 4; } .bouquet-ribbon { position: absolute; bottom: 75px; left: 50%; transform: translateX(-50%); width: 80px; height: 25px; background: linear-gradient( 90deg, #d4f5ff, #1689c9, #b9edff ); border-radius: 50%; box-shadow: 0 0 20px #5bcaff; z-index: 6; } /* PANEL */ .panel { max-width: 350px; margin: 20px auto; padding: 25px; border: 1px solid #7bdcff; background: rgba(0,20,50,.7); backdrop-filter: blur(15px); border-radius: 22px; box-shadow: 0 0 25px #087dbb; } input { width: 100%; padding: 14px; margin-top: 18px; border-radius: 30px; outline: none; border: 1px solid #8be4ff; background: #062c4b; color: white; text-align: center; font-size: 16px; } input::placeholder { color: #b3e8ff; } /* POPUP FOTO */ .photo-popup { display: none; position: fixed; inset: 0; z-index: 100; background: rgba(0,10,35,.9); backdrop-filter: blur(15px); justify-content: center; align-items: center; padding: 20px; } .photo-popup.show { display: flex; animation: fadeIn .5s; } .popup-content { position: relative; max-width: 380px; width: 100%; padding: 15px; border: 2px solid #8beaff; border-radius: 25px; background: linear-gradient(145deg,#06345d,#031326); box-shadow: 0 0 40px #38bfff; animation: zoomIn .5s; } .popup-content img { width: 100%; height: 350px; object-fit: cover; border-radius: 15px; } .popup-content h2 { margin: 15px; color: #bceaff; } .popup-content p { color: #d4f2ff; margin-bottom: 10px; } .close-popup { position: absolute; top: -15px; right: -10px; background: #087ebc; border-radius: 50%; width: 40px; height: 40px; font-size: 20px; } @keyframes fadeIn { from {opacity: 0} to {opacity: 1} } @keyframes zoomIn { from { transform: scale(.5); opacity: 0; } to { transform: scale(1); opacity: 1; } } /* GALERI */ .gallery { max-width: 380px; margin: 60px auto 30px; } .gallery h2 { color: #c8edff; margin-bottom: 25px; } .slide { display: none; animation: cinematic 1.2s ease; } .slide.active { display: block; } .slide img { width: 100%; height: 260px; object-fit: cover; border-radius: 20px; border: 2px solid #9ceaff; box-shadow: 0 0 30px #159edb; } .slide p { margin: 18px; color: #d1f1ff; } @keyframes cinematic { from { opacity: 0; transform: scale(1.08); filter: blur(8px); } to { opacity: 1; transform: scale(1); filter: blur(0); } } footer { padding: 35px 15px; color: #c4eaff; font-style: italic; } </style>
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background: linear-gradient(135deg, #061b40, #075985, #38bdf8);
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+    text-align: center;
+}
 
+/* ANIMASI LATAR */
+.background span {
+    position: fixed;
+    bottom: -50px;
+    font-size: 22px;
+    animation: naik 10s linear infinite;
+    opacity: .7;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes naik {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    20% { opacity: .8; }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    max-width: 950px;
+    margin: auto;
+    padding: 25px 15px;
+}
+
+h1 {
+    font-size: 35px;
+    color: #dbeafe;
+    text-shadow: 0 0 15px #60a5fa;
+    margin: 20px 0;
+}
+
+p {
+    line-height: 1.7;
+}
+
+.intro {
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.25);
+    padding: 22px;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    margin: 20px 0;
+}
+
+.bouquet {
+    font-size: 100px;
+    margin: 20px;
+    animation: goyang 3s infinite ease-in-out;
+}
+
+@keyframes goyang {
+    0%,100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}
+
+button {
+    background: linear-gradient(135deg, #bfdbfe, #38bdf8);
+    color: #082f49;
+    padding: 13px 25px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 10px;
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px #bae6fd;
+}
+
+/* TAMAN BUNGA */
+.garden {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+    margin: 35px 0;
+}
+
+.flower {
+    background: rgba(255,255,255,.13);
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 20px;
+    padding: 18px 5px;
+    cursor: pointer;
+    transition: .4s;
+    backdrop-filter: blur(5px);
+}
+
+.flower:hover {
+    transform: translateY(-10px) scale(1.06);
+    background: rgba(147,197,253,.3);
+}
+
+.flower .icon {
+    display: block;
+    font-size: 48px;
+    animation: goyang 2s infinite;
+}
+
+.flower.picked {
+    opacity: .5;
+    filter: grayscale(1);
+}
+
+.flower small {
+    display: block;
+    margin-top: 8px;
+    font-size: 12px;
+}
+
+/* FOTO */
+.photo-area {
+    margin: 35px 0;
+}
+
+.photos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.photo-card {
+    background: rgba(255,255,255,.14);
+    border: 1px solid rgba(255,255,255,.3);
+    padding: 12px;
+    border-radius: 20px;
+    animation: muncul .7s ease;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.photo-card p {
+    margin-top: 10px;
+    color: #dbeafe;
+}
+
+@keyframes muncul {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* KEJUTAN */
+.surprise {
+    display: none;
+    background: rgba(255,255,255,.15);
+    padding: 30px 15px;
+    border-radius: 25px;
+    margin: 40px 0;
+    animation: muncul 1s;
+}
+
+.big-bouquet {
+    font-size: 120px;
+    animation: goyang 3s infinite;
+}
+
+footer {
+    padding: 30px 10px;
+    color: #bfdbfe;
+    font-size: 13px;
+}
+
+@media(max-width:600px) {
+    h1 { font-size: 27px; }
+    .garden { grid-template-columns: repeat(2, 1fr); }
+    .photos { grid-template-columns: 1fr; }
+    .photo-card img { height: 280px; }
+}
+</style>
 </head>
 
 <body>
 
-<div class="light one"></div> <div class="light two"></div>
-
-<button class="music" onclick="toggleMusic()" id="musicButton"> 🎵 Play Music </button>
-
-<audio id="music" loop> <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg"> </audio>
-
-<header> <h1>Ocean Blue Bouquet</h1> <p class="subtitle">A BEAUTIFUL FLOWER FROM THE OCEAN</p> </header>
+<!-- BACKGROUND BERGERAK -->
+<div class="background" id="background"></div>
 
 <div class="container">
 
-<h2>💙 A Bouquet Just For You 💙</h2>
+    <h1>💙 Ocean Blue Flower Garden 💙</h1>
 
-<!-- SATU BUKET DENGAN BANYAK CABANG -->
+    <div class="intro">
+        <div class="bouquet">💐</div>
 
-<div class="bouquet-container">
+        <h2>Welcome to My Flower Garden 🌷</h2>
 
-<div class="bouquet" id="bouquet">
+        <p>
+            Di taman kecil ini terdapat 10 bunga istimewa.
+            Setiap bunga menyimpan sebuah kenangan.
+            Petiklah satu per satu dan temukan
+            kejutan yang ada di dalamnya. 🦋
+        </p>
 
-<div class="main-stem"></div>
+        <button onclick="mulai()">Mulai Memetik 🌸</button>
+    </div>
 
-<div class="branch branch1"></div> <div class="branch branch2"></div> <div class="branch branch3"></div> <div class="branch branch4"></div> <div class="branch branch5"></div> <div class="branch branch6"></div>
+    <h2>🌼 Petik Bunga Favoritmu 🌼</h2>
+    <p>Tekan bunga untuk membuka foto rahasia 💙</p>
 
-<div class="leaf leaf1"></div> <div class="leaf leaf2"></div> <div class="leaf leaf3"></div>
+    <p id="progress">Bunga terkumpul: 0 / 10</p>
 
-<img class="flower f1" src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=300" onclick="showPhoto(this.src,'Ocean Flower 1','A beautiful blue dream 💙')">
+    <!-- 10 BUNGA -->
+    <div class="garden" id="garden">
 
-<img class="flower f2" src="https://images.unsplash.com/photo-1494972308805-463bc619d34e?w=300" onclick="showPhoto(this.src,'Ocean Flower 2','A flower full of love 💙')">
+        <div class="flower" onclick="petik(0)">
+            <span class="icon">🪻</span>
+            <small>Bunga 01</small>
+        </div>
 
-<img class="flower f3" src="https://images.unsplash.com/photo-1520763185298-1b434c919102?w=300" onclick="showPhoto(this.src,'Ocean Flower 3','A beautiful memory 💙')">
+        <div class="flower" onclick="petik(1)">
+            <span class="icon">🌸</span>
+            <small>Bunga 02</small>
+        </div>
 
-<img class="flower f4" src="https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?w=300" onclick="showPhoto(this.src,'Ocean Flower 4','Forever beautiful 💙')">
+        <div class="flower" onclick="petik(2)">
+            <span class="icon">🌷</span>
+            <small>Bunga 03</small>
+        </div>
 
-<img class="flower f5" src="https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=300" onclick="showPhoto(this.src,'Ocean Flower 5','A little happiness 💙')">
+        <div class="flower" onclick="petik(3)">
+            <span class="icon">💠</span>
+            <small>Bunga 04</small>
+        </div>
 
-<img class="flower f6" src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=300" onclick="showPhoto(this.src,'Ocean Flower 6','My favorite flower 💙')">
+        <div class="flower" onclick="petik(4)">
+            <span class="icon">🪻</span>
+            <small>Bunga 05</small>
+        </div>
 
-<div class="bouquet-wrapper"></div> <div class="bouquet-ribbon"></div>
+        <div class="flower" onclick="petik(5)">
+            <span class="icon">🌺</span>
+            <small>Bunga 06</small>
+        </div>
 
-</div> </div>
+        <div class="flower" onclick="petik(6)">
+            <span class="icon">🌼</span>
+            <small>Bunga 07</small>
+        </div>
 
-<!-- INPUT BUNGA -->
+        <div class="flower" onclick="petik(7)">
+            <span class="icon">🌷</span>
+            <small>Bunga 08</small>
+        </div>
 
-<div class="panel">
+        <div class="flower" onclick="petik(8)">
+            <span class="icon">🪷</span>
+            <small>Bunga 09</small>
+        </div>
 
-<h3>Give Me A Flower 🌷</h3>
+        <div class="flower" onclick="petik(9)">
+            <span class="icon">💐</span>
+            <small>Bunga 10</small>
+        </div>
 
-<p style="margin-top:10px;color:#bdeaff"> Ketik bunga untuk menambah bunga. </p>
+    </div>
 
-<input id="flowerInput" placeholder="Ketik bunga..." onkeydown="if(event.key==='Enter') addFlower()">
+    <!-- TEMPAT FOTO -->
+    <div class="photo-area">
+        <h2>📸 Our Beautiful Memories</h2>
+        <p>Setiap bunga menyimpan satu foto kenangan.</p>
 
-<button onclick="addFlower()">Add Flower ✿</button> <button onclick="resetFlowers()">Reset ♡</button>
+        <div class="photos" id="photos"></div>
+    </div>
 
-<p id="counter" style="margin-top:15px"> Total bunga tambahan: 0 </p>
+    <!-- KEJUTAN AKHIR -->
+    <div class="surprise" id="surprise">
+
+        <h2>💙 SURPRISE FOR YOU 💙</h2>
+
+        <div class="big-bouquet">💐</div>
+
+        <h2>10 Bunga Sudah Kamu Petik!</h2>
+
+        <p>
+            Seperti bunga yang tumbuh di taman,
+            semoga kebahagiaan selalu tumbuh
+            di setiap langkahmu.
+
+            Terima kasih sudah menjadi bagian
+            dari cerita yang indah ini. 💙
+        </p>
+
+        <h1>LOVE YOU 🌸🦋</h1>
+
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'})">
+            Kembali ke Taman 🌷
+        </button>
+
+    </div>
 
 </div>
 
-<!-- GALERI 10 FOTO -->
+<footer>
+    Made with 💙 and flowers 🌸
+    <br>
+    Ocean Blue Flower Garden © 2026
+</footer>
 
-<div class="gallery">
+<script>
 
-<h2>✧ Cinematic Flower Gallery ✧</h2>
+// BACKGROUND ANIMASI
+const bg = document.getElementById("background");
 
-<div class="slide active"> <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800"> <p>01 — Ocean Dreams</p> </div>
+const hiasan = ["💙","🦋","✨","🌸","🫧","🤍"];
 
-<div class="slide"> <img src="https://images.unsplash.com/photo-1494972308805-463bc619d34e?w=800"> <p>02 — Blue Romance</p> </div>
+for(let i=0; i<35; i++) {
+    let span = document.createElement("span");
+    span.innerHTML = hiasan[Math.floor(Math.random()*hiasan.length)];
+    span.style.left = Math.random()*100 + "%";
+    span.style.animationDuration = (5+Math.random()*10)+"s";
+    span.style.animationDelay = Math.random()*10+"s";
+    bg.appendChild(span);
+}
 
-<div class="slide"> <img src="https://images.unsplash.com/photo-1520763185298-1b434c919102?w=800"> <p>03 — Beautiful Memories</p> </div>
+// DAFTAR FOTO
+// Masukkan 10 foto ke folder foto
+const foto = [
+    "foto/foto1.jpg",
+    "foto/foto2.jpg",
+    "foto/foto3.jpg",
+    "foto/foto4.jpg",
+    "foto/foto5.jpg",
+    "foto/foto6.jpg",
+    "foto/foto7.jpg",
+    "foto/foto8.jpg",
+    "foto/foto9.jpg",
+    "foto/foto10.jpg"
+];
 
-<div class="slide"> <img src="https://images.unsplash.com/photo-1494625927555-6ec4433b1571?w=800"> <p>04 — Endless Love</p> </div>
+const judul = [
+    "A Beautiful Moment 💙",
+    "Sweet Memories 🌸",
+    "Our Happiness 🦋",
+    "Lovely Day 🌷",
+    "Precious Moment 💐",
+    "Little Happiness 🤍",
+    "Forever Remember ✨",
+    "Beautiful Story 🌺",
+    "Special Memories 🪻",
+    "My Favorite Photo 💙"
+];
 
-<div class="slide"> <img src="https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?w=800"> <p>05 — Deep Blue</p> </div>
+let terkumpul = [];
 
-<div class="slide"> <img src="https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=800"> <p>06 — Flower Paradise</p> </div>
+function mulai() {
+    document.getElementById("garden").scrollIntoView({
+        behavior:"smooth"
+    });
+}
 
-<div class="slide"> <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=800"> <p>07 — Morning Light</p> </div>
+function petik(index) {
 
-<div class="slide"> <img src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?w=800"> <p>08 — Magical Garden</p> </div>
+    if(terkumpul.includes(index)) {
+        alert("Bunga ini sudah kamu petik! 🌸");
+        return;
+    }
 
-<div class="slide"> <img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=800"> <p>09 — Blue Heaven</p> </div>
+    terkumpul.push(index);
 
-<div class="slide"> <img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=800"> <p>10 — Forever Bloom</p> </div>
+    const bunga = document.querySelectorAll(".flower");
+    bunga[index].classList.add("picked");
 
-<button onclick="changeSlide(-1)">❮ Previous</button> <button onclick="changeSlide(1)">Next ❯</button>
+    // BUAT FOTO
+    let card = document.createElement("div");
+    card.className = "photo-card";
 
-<p id="slideNumber">1 / 10</p>
+    let img = document.createElement("img");
+    img.src = foto[index];
+    img.alt = judul[index];
 
-</div> </div>
+    let caption = document.createElement("p");
+    caption.innerText = judul[index];
 
-<footer> "Every flower blooms in its own beautiful time." ♡ <br><br> Made with love 💙 </footer>
+    img.onerror = function() {
+        this.style.display = "none";
+        caption.innerText += " (Tambahkan foto ke folder foto)";
+    };
 
-<!-- POPUP -->
+    card.appendChild(img);
+    card.appendChild(caption);
 
-<div class="photo-popup" id="photoPopup" onclick="closePhoto(event)">
+    document.getElementById("photos").appendChild(card);
 
-<div class="popup-content">
+    document.getElementById("progress").innerText =
+        "Bunga terkumpul: " + terkumpul.length + " / 10";
 
-<button class="close-popup" onclick="closePhoto()">×</button>
+    // KEJUTAN JIKA SEMUA SUDAH DIPETIK
+    if(terkumpul.length === 10) {
+        setTimeout(() => {
+            document.getElementById("surprise").style.display = "block";
+            document.getElementById("surprise").scrollIntoView({
+                behavior:"smooth"
+            });
+        },1000);
+    }
+}
 
-<img id="popupImage" src="" alt="Foto bunga">
+</script>
 
-<h2 id="popupTitle">Beautiful Flower 💙</h2>
-
-<p id="popupDescription">A beautiful flower just for you.</p>
-
-</div> </div>
-
-<script> /* PARTIKEL */ for(let i=0;i<35;i++){ let p=document.createElement("div"); p.className="particle"; p.innerHTML=Math.random()>.5?"✦":"✧"; p.style.left=Math.random()*100+"vw"; p.style.animationDuration=(5+Math.random()*10)+"s"; p.style.animationDelay=Math.random()*8+"s"; p.style.fontSize=(10+Math.random()*15)+"px"; document.body.appendChild(p); } /* MUSIK */ const music=document.getElementById("music"); function toggleMusic(){ if(music.paused){ music.play(); document.getElementById("musicButton").innerHTML="⏸ Pause Music"; }else{ music.pause(); document.getElementById("musicButton").innerHTML="🎵 Play Music"; } } /* FOTO TAMBAHAN */ let flowerCount=0; const flowerImages=[ "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=500", "https://images.unsplash.com/photo-1494972308805-463bc619d34e?w=500", "https://images.unsplash.com/photo-1520763185298-1b434c919102?w=500", "https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?w=500", "https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=500", "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=500" ]; function addFlower(){ const input=document.getElementById("flowerInput"); if(input.value.trim().toLowerCase()!=="bunga"){ alert("Ketik kata bunga ya! 💙"); return; } if(flowerCount>=20){ alert("Buket sudah penuh! 💐"); return; } const index=flowerCount%flowerImages.length; const flower=document.createElement("img"); flower.src=flowerImages[index]; flower.className="flower"; flower.style.position="relative"; flower.style.top="auto"; flower.style.left="auto"; flower.style.right="auto"; const number=flowerCount+1; flower.onclick=function(){ showPhoto( flowerImages[index], "Additional Flower "+number, "A little flower with a beautiful story 💙" ); }; document.getElementById("bouquet").appendChild(flower); flowerCount++; document.getElementById("counter").innerText= "Total bunga tambahan: "+flowerCount; input.value=""; } function resetFlowers(){ flowerCount=0; document.querySelectorAll("#bouquet .flower").forEach((flower,index)=>{ if(index>=6) flower.remove(); }); document.getElementById("counter").innerText= "Total bunga tambahan: 0"; } /* POPUP FOTO */ function showPhoto(image,title,description){ document.getElementById("popupImage").src=image; document.getElementById("popupTitle").innerText=title; document.getElementById("popupDescription").innerText=description; document.getElementById("photoPopup").classList.add("show"); } function closePhoto(event){ if( !event || event.target.id==="photoPopup" || event.target.classList.contains("close-popup") ){ document.getElementById("photoPopup").classList.remove("show"); } } /* SLIDE */ let currentSlide=0; const slides=document.querySelectorAll(".slide"); function changeSlide(direction){ slides[currentSlide].classList.remove("active"); currentSlide=(currentSlide+direction+slides.length)%slides.length; slides[currentSlide].classList.add("active"); document.getElementById("slideNumber").innerText= (currentSlide+1)+" / "+slides.length; } setInterval(()=>{ changeSlide(1); },5000); </script>
-
-</body> </html>
+</body>
+</html>
