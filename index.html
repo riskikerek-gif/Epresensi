@@ -3,66 +3,125 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>My Ocean Blue Bouquet 💙</title>
 
 <style>
-* {box-sizing:border-box;margin:0;padding:0}
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 body {
-    min-height:100vh;
     font-family:'Trebuchet MS',sans-serif;
     color:white;
     text-align:center;
-    background:linear-gradient(140deg,#03152f,#075985,#38bdf8);
+    min-height:100vh;
+    background:linear-gradient(135deg,#020617,#082f49,#075985,#38bdf8);
     overflow-x:hidden;
 }
 
 .background span {
     position:fixed;
-    bottom:-40px;
-    pointer-events:none;
-    animation:float 9s linear infinite;
+    bottom:-50px;
     z-index:0;
+    pointer-events:none;
+    animation:float 10s linear infinite;
 }
 
 @keyframes float {
-    to {transform:translateY(-110vh) rotate(360deg);opacity:0}
+    0% {transform:translateY(0) rotate(0deg);opacity:0}
+    20% {opacity:1}
+    100% {transform:translateY(-110vh) rotate(360deg);opacity:0}
 }
 
 .container {
-    max-width:1000px;
-    padding:25px 15px;
-    margin:auto;
     position:relative;
     z-index:2;
+    max-width:1000px;
+    margin:auto;
+    padding:25px 15px;
 }
 
 h1 {
     color:#dbeafe;
-    text-shadow:0 0 20px #7dd3fc;
+    text-shadow:0 0 20px #60a5fa;
+    font-size:32px;
     margin:20px 0;
 }
 
-.subtitle {
+h2 {
     color:#dbeafe;
+    margin:15px 0;
+}
+
+p {
     line-height:1.8;
+}
+
+.intro {
+    background:rgba(255,255,255,.12);
+    border:1px solid #93c5fd;
+    border-radius:25px;
+    padding:25px 15px;
+    margin:20px auto;
+    backdrop-filter:blur(10px);
+}
+
+/* MUSIK */
+.music-box {
+    background:rgba(255,255,255,.13);
+    border:1px solid #bfdbfe;
+    border-radius:25px;
+    padding:22px;
+    margin:30px auto;
+    max-width:450px;
+    box-shadow:0 0 20px #2563eb;
+}
+
+.music-icon {
+    font-size:55px;
+    animation:dance 2s infinite;
+}
+
+@keyframes dance {
+    0%,100% {transform:rotate(-10deg)}
+    50% {transform:rotate(10deg)}
+}
+
+button {
+    background:linear-gradient(135deg,#dbeafe,#38bdf8);
+    color:#082f49;
+    border:none;
+    padding:13px 25px;
+    border-radius:30px;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+    margin:12px;
+    transition:.3s;
+}
+
+button:hover {
+    transform:scale(1.08);
+    box-shadow:0 0 20px #93c5fd;
 }
 
 /* BUKET BESAR */
 .bouquet {
     position:relative;
-    margin:35px auto;
     width:min(100%,650px);
-    height:440px;
-    background:radial-gradient(ellipse,rgba(147,197,253,.2),transparent 70%);
+    height:470px;
+    margin:35px auto;
+    background:radial-gradient(ellipse,rgba(147,197,253,.25),transparent 70%);
 }
 
 .flower {
     position:absolute;
-    font-size:55px;
-    animation:sway 3s ease-in-out infinite;
+    font-size:65px;
     filter:drop-shadow(0 0 12px #93c5fd);
+    animation:sway 3s ease-in-out infinite;
 }
 
 @keyframes sway {
@@ -70,16 +129,16 @@ h1 {
     50% {transform:rotate(7deg) scale(1.1)}
 }
 
-.f1 {top:35px;left:15%}
-.f2 {top:5px;left:38%;font-size:70px}
-.f3 {top:30px;right:13%}
-.f4 {top:115px;left:5%}
-.f5 {top:110px;left:35%;font-size:70px}
-.f6 {top:115px;right:5%}
-.f7 {top:190px;left:18%}
-.f8 {top:190px;right:18%}
-.f9 {top:65px;left:63%}
-.f10 {top:205px;left:43%;font-size:48px}
+.f1 {top:30px;left:13%}
+.f2 {top:0;left:38%;font-size:75px}
+.f3 {top:25px;right:12%}
+.f4 {top:110px;left:3%}
+.f5 {top:100px;left:37%;font-size:80px}
+.f6 {top:110px;right:3%}
+.f7 {top:190px;left:16%}
+.f8 {top:190px;right:16%}
+.f9 {top:60px;left:65%}
+.f10 {top:205px;left:44%;font-size:55px}
 
 .wrapper {
     position:absolute;
@@ -87,28 +146,23 @@ h1 {
     left:50%;
     transform:translateX(-50%);
     width:78%;
-    height:235px;
-    background:linear-gradient(135deg,#bfdbfe,#2563eb,#0c4a6e);
-    clip-path:polygon(8% 0,92% 0,72% 100%,28% 100%);
-    border:2px solid #dbeafe;
-    box-shadow:0 0 30px #60a5fa;
+    height:245px;
+    background:linear-gradient(135deg,#dbeafe,#60a5fa,#1d4ed8,#082f49);
+    clip-path:polygon(5% 0,95% 0,72% 100%,28% 100%);
+    border:2px solid white;
+    filter:drop-shadow(0 0 20px #60a5fa);
 }
 
 .ribbon {
     position:absolute;
-    bottom:30px;
+    bottom:35px;
     left:50%;
     transform:translateX(-50%);
     font-size:65px;
     z-index:2;
 }
 
-/* FOTO */
-.gallery-title {
-    margin:45px 0 10px;
-    color:#dbeafe;
-}
-
+/* GALERI */
 .gallery {
     display:grid;
     grid-template-columns:repeat(2,1fr);
@@ -119,50 +173,42 @@ h1 {
 .photo {
     padding:12px;
     background:rgba(255,255,255,.13);
-    border:2px solid rgba(191,219,254,.65);
+    border:2px solid #bfdbfe;
     border-radius:22px;
-    box-shadow:0 0 15px rgba(147,197,253,.25);
+    box-shadow:0 0 15px rgba(147,197,253,.3);
     animation:appear .8s;
 }
 
 .photo img {
     width:100%;
-    height:250px;
+    height:260px;
     object-fit:cover;
     border-radius:15px;
 }
 
 .photo p {
-    padding:12px 3px 3px;
+    padding:12px 3px;
     color:#dbeafe;
 }
 
 @keyframes appear {
-    from {opacity:0;transform:translateY(20px)}
+    from {opacity:0;transform:translateY(25px)}
     to {opacity:1;transform:translateY(0)}
 }
 
-button {
-    background:linear-gradient(135deg,#dbeafe,#38bdf8);
-    border:0;
-    padding:14px 25px;
-    border-radius:30px;
-    color:#082f49;
-    font-weight:bold;
-    cursor:pointer;
-    margin:15px;
-    font-size:15px;
-}
-
-button:hover {transform:scale(1.08)}
-
+/* PESAN AKHIR */
 .message {
-    padding:30px 18px;
-    margin:35px 0;
-    background:rgba(255,255,255,.12);
+    background:rgba(255,255,255,.13);
     border:1px solid #bfdbfe;
+    padding:30px 20px;
+    margin:40px auto;
     border-radius:25px;
     line-height:2;
+}
+
+.big-flower {
+    font-size:90px;
+    animation:sway 3s infinite;
 }
 
 footer {
@@ -171,11 +217,12 @@ footer {
 }
 
 @media(max-width:600px) {
-    .bouquet {height:350px}
-    .flower {font-size:40px}
+    h1 {font-size:26px}
+    .bouquet {height:360px}
+    .flower {font-size:42px}
     .f2,.f5 {font-size:55px}
-    .wrapper {height:180px}
-    .ribbon {font-size:45px}
+    .wrapper {height:190px}
+    .ribbon {font-size:48px}
     .gallery {grid-template-columns:1fr}
     .photo img {height:280px}
 }
@@ -188,14 +235,46 @@ footer {
 
 <div class="container">
 
+<!-- PEMBUKA -->
 <h1>💙 MY OCEAN BLUE BOUQUET 💙</h1>
 
-<p class="subtitle">
-Satu buket besar, sepuluh bunga indah,<br>
-dan sepuluh kenangan yang tidak terlupakan. 🦋
-</p>
+<div class="intro">
+    <div style="font-size:65px">🦋💐🪻</div>
+
+    <h2>A Special Bouquet For You</h2>
+
+    <p>
+        Sebuah buket besar berisi bunga-bunga biru
+        yang indah. Setiap bunga membawa kenangan,
+        setiap foto memiliki cerita,
+        dan semuanya aku rangkai khusus untukmu. 💙
+    </p>
+</div>
+
+<!-- MUSIK -->
+<div class="music-box">
+
+    <div class="music-icon">🎵</div>
+
+    <h2>Our Romantic Song</h2>
+
+    <p>Shape of My Heart - Backstreet Boys</p>
+
+    <audio id="myMusic" loop>
+        <source src="music/music.mp3" type="audio/mpeg">
+    </audio>
+
+    <button onclick="toggleMusic()" id="musicButton">
+        ▶ Putar Musik 💙
+    </button>
+
+</div>
 
 <!-- BUKET BESAR -->
+<h2>🪻 A Big Bouquet Of Blue Flowers 🪻</h2>
+
+<p>Sepuluh bunga indah dalam satu buket spesial.</p>
+
 <div class="bouquet">
 
     <div class="flower f1">🪻</div>
@@ -214,69 +293,82 @@ dan sepuluh kenangan yang tidak terlupakan. 🦋
 
 </div>
 
-<h2>🌷 10 Beautiful Memories 🌷</h2>
+<!-- 10 FOTO -->
+<h2>📸 OUR 10 BEAUTIFUL MEMORIES</h2>
 
-<p class="subtitle">
-Setiap bunga menyimpan satu foto spesial.
-</p>
+<p>Sepuluh foto, sepuluh cerita, satu buket penuh cinta.</p>
 
 <div class="gallery" id="gallery"></div>
 
+<!-- PESAN PENUTUP -->
 <div class="message">
-    <h2>💙 A Bouquet For You 💙</h2>
+
+    <div class="big-flower">💐</div>
+
+    <h2>For Someone Special 💙</h2>
+
     <p>
-    Aku ingin memberikanmu sebuah buket bunga
-    yang tidak akan pernah layu.
+        Jika bunga bisa berbicara,
+        mungkin mereka akan mengatakan
+        betapa indahnya setiap kenangan.
 
-    Sepuluh foto ini adalah sepuluh kenangan
-    yang ingin selalu aku simpan.
+        Aku memberikan buket ini bukan hanya
+        karena bunganya indah,
+        tetapi karena setiap kenangan di dalamnya
+        memiliki arti tersendiri.
 
-    Semoga setiap bunga mengingatkanmu
-    betapa indahnya sebuah kenangan. 🪻
-
+        Semoga bunga-bunga ini selalu mengingatkanmu
+        pada hal-hal indah yang pernah kita lalui.
     </p>
-    <h2>Forever Beautiful 💙</h2>
-    <div style="font-size:65px">💐🦋🌸</div>
+
+    <h1>FOREVER BEAUTIFUL 💙</h1>
+
+    <div style="font-size:55px">🦋🌸💠🪻</div>
+
 </div>
 
 </div>
 
 <footer>
-Made with Love 💙 Ocean Blue Bouquet
+    Made with 💙 for you
+    <br>
+    Ocean Blue Bouquet © 2026
 </footer>
 
 <script>
 
-// FOTO KENANGAN
+// DAFTAR FOTO
 const photos = [
-"foto/foto1.jpg",
-"foto/foto2.jpg",
-"foto/foto3.jpg",
-"foto/foto4.jpg",
-"foto/foto5.jpg",
-"foto/foto6.jpg",
-"foto/foto7.jpg",
-"foto/foto8.jpg",
-"foto/foto9.jpg",
-"foto/foto10.jpg"
+    "foto/foto1.jpg",
+    "foto/foto2.jpg",
+    "foto/foto3.jpg",
+    "foto/foto4.jpg",
+    "foto/foto5.jpg",
+    "foto/foto6.jpg",
+    "foto/foto7.jpg",
+    "foto/foto8.jpg",
+    "foto/foto9.jpg",
+    "foto/foto10.jpg"
 ];
 
 const captions = [
-"Bunga pertama 💙",
-"Kenangan kedua 🪻",
-"Beautiful moment 🌸",
-"Sweet memories 🦋",
-"Precious day 💠",
-"Little happiness 🤍",
-"Lovely memories 🌷",
-"Special moment 💙",
-"Forever together 🪻",
-"Last beautiful memory 💐"
+    "Bunga pertama 💙",
+    "Kenangan kedua 🪻",
+    "Beautiful Moment 🌸",
+    "Sweet Memories 🦋",
+    "Precious Day 💠",
+    "Little Happiness 🤍",
+    "Lovely Memories 🌷",
+    "Special Moment 💙",
+    "Forever Remember 🪻",
+    "Last Beautiful Memory 💐"
 ];
 
+// TAMPILKAN 10 FOTO
 const gallery = document.getElementById("gallery");
 
 photos.forEach((src,i) => {
+
     const card = document.createElement("div");
     card.className = "photo";
 
@@ -290,20 +382,49 @@ photos.forEach((src,i) => {
 
     card.appendChild(img);
     card.appendChild(caption);
+
     gallery.appendChild(card);
 });
 
-// BACKGROUND BERGERAK
-const symbols = ["💙","🦋","✨","🪻","🤍","🌸"];
+// MUSIK PLAY / PAUSE
+function toggleMusic() {
 
-for(let i=0;i<35;i++){
-    let el = document.createElement("span");
-    el.textContent = symbols[Math.floor(Math.random()*symbols.length)];
+    const music = document.getElementById("myMusic");
+    const button = document.getElementById("musicButton");
+
+    if(music.paused) {
+
+        music.play().then(() => {
+            button.innerHTML = "⏸ Jeda Musik 💙";
+        }).catch(() => {
+            alert("Periksa file musik/music.mp3 kamu!");
+        });
+
+    } else {
+
+        music.pause();
+        button.innerHTML = "▶ Putar Musik 💙";
+
+    }
+}
+
+// BACKGROUND BERGERAK
+const symbols = ["💙","🦋","✨","🪻","🤍","🌸","🫧"];
+
+for(let i=0;i<40;i++) {
+
+    const el = document.createElement("span");
+
+    el.textContent =
+        symbols[Math.floor(Math.random()*symbols.length)];
+
     el.style.left = Math.random()*100+"%";
-    el.style.fontSize = (15+Math.random()*20)+"px";
+    el.style.fontSize = (15+Math.random()*22)+"px";
     el.style.animationDuration = (5+Math.random()*10)+"s";
     el.style.animationDelay = Math.random()*10+"s";
+
     document.getElementById("background").appendChild(el);
+
 }
 
 </script>
